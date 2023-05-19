@@ -18,3 +18,7 @@ php -r "unlink('composer-setup.php');"
 ```
 $ php composer.phar create-project slim/slim-skeleton --prefer-dist
 ```
+#### Instalando versão 3.1
+```
+$ php composer.phar create-project slim/slim-skeleton:^3.5 slim3
+```
