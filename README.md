@@ -22,3 +22,10 @@ $ php composer.phar create-project slim/slim-skeleton --prefer-dist
 ```
 $ php composer.phar create-project slim/slim-skeleton:^3.5 slim3
 ```
+#### Instalando illuminate para uso e configuração do banco de dados:
+```
+$ php composer.phar require illuminate/database
+```
+#### Rodando arquivo db.php via terminal
+* OBS: Tem que executar no diretório que antecede o public:
+  
