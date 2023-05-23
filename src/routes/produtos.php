@@ -28,10 +28,17 @@ $app->group('/api/v1', function(){
     });
 
     // Recupera um produto por id:
-        // Lista Produtos
-        $this->get('/produtos/lista/{id}', function(Request $request,Response $response, $args){
-            $produtos = Produto::findOrFail($args['id']);
-            return $response->withJson( $produtos );
-        });
+    $this->get('/produtos/lista/{id}', function(Request $request,Response $response, $args){
+        $produtos = Produto::findOrFail($args['id']);
+        return $response->withJson( $produtos );
+    });
+
+    // Atualiza um produto por um determinado ID
+    $this->put('/produtos/atualiza/{id}', function($request, $response, $args){
+        $dados =  $request->getParsedBody();
+        $produto = Produto::findOrFail($args['id']);
+        $produto->update( $dados );
+        return $response->withJson( $produto );
+    });
 
 });
