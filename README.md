@@ -28,4 +28,10 @@ $ php composer.phar require illuminate/database
 ```
 #### Rodando arquivo db.php via terminal
 * OBS: Tem que executar no diretório que antecede o public:
-  
+```
+$ php db.php
+```
+#### Atualizando o composer com o diretório App para poder utilizar o namespace " App\ "
+```
+$ php composer.phar update
+```
