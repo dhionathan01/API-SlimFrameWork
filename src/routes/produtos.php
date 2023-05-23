@@ -10,9 +10,21 @@ Illuminate -> é o motor da base de dados do Laravel sem o Laravel
 Eloquent ORM
 */
 $app->group('/api/v1', function(){
+
+    // Lista Produtos
     $this->get('/produtos/lista', function(Request $request,Response $response){
         // Fazendo um select no banco direto com método ::get com o extends de model de eloquent
         $produtos = Produto::get();
         return $response->withJson( $produtos );
     });
+
+    // Adiciona um produto
+    $this->post('/produtos/adiciona', function($request, $response){
+        $dados =  $request->getParsedBody();
+        
+        $produto = Produto::create( $dados );
+        return $response->withJson( $produto );
+
+    });
+
 });
