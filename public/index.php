@@ -23,7 +23,8 @@ require __DIR__ . '/../src/dependencies.php';
 
 // Register middleware
 require __DIR__ . '/../src/middleware.php';
-
+// Iniciando o banco de dados pelo container:
+$container->get('db');
 // Register routes
 require __DIR__ . '/../src/routes.php';
 

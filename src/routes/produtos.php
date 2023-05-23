@@ -1,6 +1,7 @@
 <?php
     use Slim\Http\Request;
     use Slim\Http\Response;
+    use App\Models\Produto; // Pegando a classe produto pelo namescape
 // Rotas para produtos
 /*
 ORM -> Object Relational Mapper (Mapeador de objeto relacional)
@@ -10,6 +11,8 @@ Eloquent ORM
 */
 $app->group('/api/v1', function(){
     $this->get('/produtos/lista', function(Request $request,Response $response){
-        return $response->withJson(['nome'=> 'Samsung S20 FE']);
+        // Fazendo um select no banco direto com método ::get com o extends de model de eloquent
+        $produtos = Produto::get();
+        return $response->withJson( $produtos );
     });
 });
