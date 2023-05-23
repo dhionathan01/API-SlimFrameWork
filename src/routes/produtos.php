@@ -21,10 +21,17 @@ $app->group('/api/v1', function(){
     // Adiciona um produto
     $this->post('/produtos/adiciona', function($request, $response){
         $dados =  $request->getParsedBody();
-        
+
         $produto = Produto::create( $dados );
         return $response->withJson( $produto );
 
     });
+
+    // Recupera um produto por id:
+        // Lista Produtos
+        $this->get('/produtos/lista/{id}', function(Request $request,Response $response, $args){
+            $produtos = Produto::findOrFail($args['id']);
+            return $response->withJson( $produtos );
+        });
 
 });
