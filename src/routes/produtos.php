@@ -41,4 +41,12 @@ $app->group('/api/v1', function(){
         return $response->withJson( $produto );
     });
 
+    // Remove um produto por um determinado ID
+    $this->put('/produtos/remove/{id}', function($request, $response, $args){
+        $dados =  $request->getParsedBody();
+        $produto = Produto::findOrFail($args['id']);
+        $produto->delete();
+        return $response->withJson( $produto );
+    });
+
 });
