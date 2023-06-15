@@ -1,7 +1,7 @@
 <?php
 use Slim\Http\Request;
 use Slim\Http\Response;
-
+// API AJAX concluido
 $app->options('/{routes:.+}', function ($request, $response, $args) {
     return $response;
 });
