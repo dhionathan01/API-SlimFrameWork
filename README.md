@@ -35,3 +35,8 @@ $ php db.php
 ```
 $ php composer.phar update
 ```
+
+#### Adicionando lib para geração do token
+```
+$ php composer.phar  require firebase/php-jwt
+```
